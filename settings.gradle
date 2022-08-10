@@ -15,6 +15,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GiniApps - KSP Meetup"
-include ':app'
-include ':libKSP'
-include ':libAnnotations'
+include ':example'
+include ':eklient'
+include ':eklientKSP'
+include ':eklientAnnotations'
