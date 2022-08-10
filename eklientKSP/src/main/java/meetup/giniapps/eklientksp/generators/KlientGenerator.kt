@@ -47,21 +47,21 @@ class EKlientFile(
             val simpleName = userAnnotatedInterface.simpleName.asString()
             return FunSpec.builder("getValue")
                 .addModifiers(KModifier.OVERRIDE)
+                .addCode(
+                    CodeBlock.of(
+//                        "if(property is $simpleName) {\n" +
+                        "        return object : $simpleName {}\n" +
+                                "            .apply { context = ${klientContextClassName.simpleName}() }\n"
+//                                "      } else {\n" +
+//                                "        throw IllegalStateException(\"${klientFactoryClassName.simpleName} support only $simpleName\")\n" +
+//                                "      }"
+                    )
+                )
                 .addParameter("thisRef", Any::class.asTypeName().copy(nullable = true))
                 .addParameter(
                     "property",
                     KProperty::class.asTypeName()
                         .parameterizedBy(TypeVariableName("*"))
-                )
-                .addCode(
-                    CodeBlock.of(
-                        "if(thisRef is $simpleName) {\n" +
-                                "        return object : $simpleName {}\n" +
-                                "            .apply { context = ${klientContextClassName.simpleName}() }\n" +
-                                "      } else {\n" +
-                                "        throw IllegalStateException(\"${klientFactoryClassName.simpleName} support only $simpleName\")\n" +
-                                "      }"
-                    )
                 )
                 .returns(userAnnotatedInterface.toClassName())
                 .build()
