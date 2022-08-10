@@ -1,5 +1,57 @@
 {
-  "object": {
-      "param":"value"
+  "GiniApps": {
+    "Meetups": [
+      {
+        "Name": "Kotlin Code Generation",
+        "Creator": "Elias",
+        "Date": "10/08/2022",
+        "Time": "17:00"
+      },
+      {
+        "Name": "Kotlin Code Generation",
+        "Creator": "Miron",
+        "Date": "10/08/2022",
+        "Time": "17:00"
+      }
+    ],
+    "Divisions" : [
+      {
+        "Platform": "Android",
+        "Ginis": [
+          {
+            "Name": "Rick",
+            "Dimension" : "C-134"
+          },
+          {
+            "Name": "Morty",
+            "Dimension" : "C-137"
+          },
+          {
+            "Name": "Beth",
+            "Dimension" : "C-137"
+          },
+          {
+            "Name": "Summer",
+            "Dimension" : "C-643"
+          },
+          {
+            "Name": "Jerry",
+            "Dimension" : "C-073"
+          },
+          {
+            "Name": "Beth",
+            "Dimension" : "C-848"
+          },
+          {
+            "Name": "Summer",
+            "Dimension" : "C-134"
+          },
+          {
+            "Name": "Jerry",
+            "Dimension" : "C-848"
+          }
+        ]
+      }
+    ]
   }
 }
